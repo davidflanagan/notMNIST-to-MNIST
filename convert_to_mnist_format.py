@@ -114,17 +114,5 @@ def main(argv):
   write_labeldata(labeldata, argv[3])
   write_imagedata(imagedata, argv[4])
 
-#  print(labeldata[0:100])
-#  print(imagedata[0])
-#  imagedata = make_imagedata_array(labelsAndFiles)
-#  print(imagedata[0])
-
-#  filename = labelsAndFiles[0][1]
-#  print filename
-#  data = imageio.imread(filename)
-#  print data
-#  print data.shape
-
-
 if __name__=='__main__':
   main(sys.argv)
