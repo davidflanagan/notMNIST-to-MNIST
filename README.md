@@ -7,11 +7,23 @@ handwritten digits 0 through 9.
 
 Unfortunately, the notMNIST data is not provided in the same format as
 the MNIST data, so you can't just swap in the notMNIST data files and
-run your neural network on it unaltered. This python script fixes
-that. It converts a sample of the notMNIST dataset into the same file
-format used by the MNIST dataset and outputs files that you can drop
-directly into your existing program so that you can test that program
-with the more challenging notMNIST letter glpyhs.
+run your neural network on it unaltered. This repo solves that problem:
+the four *.gz files here have the same number of entries, in the same
+data format as the same-named file from the MNIST dataset. But instead
+of handwritten digits, the images are letters from A to J (the labels
+are still 0 through 9). (These files are posted here with permission
+of the original author of the notMNIST data set.)
+
+If you have a neural network that uses MNIST, you should be able to
+substitute the data files from this repo and run the program without
+making any changes. Note that the notMNIST dataset is harder and less clean than
+MNIST. A simple 2 hidden layer net that gets 98% accuracy on MNIST gets
+about 93 or 94% accuracy with these notMNIST files.
+
+The notMNIST dataset is much larger than the MNIST set, so the data files here
+are a random sample of the notMNIST data. If you want to take a different sample
+or a larger sample, you can use the python script in this directory to
+process notMNIST yourself.
 
 Instructions:
 
@@ -50,7 +62,3 @@ the size of the MNIST files.  notMNIST is significantly bigger than
 MNIST, however, and you can probably use numbers as large as 1800 for
 the test files and 50000 for the training files.
 
-The script chooses a random sample of notMNIST glyphs, but sets the
-random seed so that it produces the same sample on each run.  If you
-remove the random.seed() call you can produce different
-MNIST-compatible data sets on each run.
