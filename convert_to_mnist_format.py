@@ -104,9 +104,10 @@ def write_imagedata(imagedata, outputfile):
 
 
 def main(argv):
-  # seed the random number generator so everyone who runs this
-  # program with the same arguments gets the same output
-  random.seed(int("notMNIST", 36))
+  # Uncomment the line below if you want to seed the random
+  # number generator in the same way I did to produce the
+  # specific data files in this repo.
+  # random.seed(int("notMNIST", 36))
 
   labelsAndFiles = get_labels_and_files(argv[1], int(argv[2]))
   random.shuffle(labelsAndFiles)
